@@ -297,8 +297,23 @@ Full-Width Styles
   padding: 50px 10px 30px 10px;
 }
 
+#project_logo {
+    margin: 0 auto;
+    width: 250px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+}
+
 #project_title {
-  margin: 0;
+  margin: 0 auto;
+  width: 0;
   color: #fff;
   font-size: 42px;
   font-weight: 700;
@@ -307,9 +322,12 @@ Full-Width Styles
 
 #project_tagline {
   color: #fff;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 300;
   background: none;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
   text-shadow: #111 0px 0px 10px;
 }
 
