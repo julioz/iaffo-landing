@@ -99,6 +99,8 @@ p {
 
 footer p {
   color: #f2f2f2;
+  margin: 0;
+  font-size: 12px;
 }
 
 a {
