@@ -285,12 +285,16 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
+  background: url('../images/header.jpg');
+  background-size: 100% auto;
+  background-repeat:no-repeat;
+  background-attachment:initial;
+  background-position:bottom; 
+  /*background: -moz-linear-gradient(top, #373737, #212121);
   background: -webkit-linear-gradient(top, #373737, #212121);
   background: -ms-linear-gradient(top, #373737, #212121);
   background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
+  background: linear-gradient(top, #373737, #212121);*/
 }
 
 #header_wrap .inner {
@@ -309,6 +313,7 @@ Full-Width Styles
     -moz-box-shadow: none;
     -o-box-shadow: none;
     -ms-box-shadow: none;
+    text-shadow: #111 0px 0px 10px;
 }
 
 #project_title {

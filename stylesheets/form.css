@@ -19,16 +19,18 @@ input {
     padding-bottom: .7em;
     padding-left: 1em;
     padding-right:1em;
+    min-width: 350px;
     color: #525252;
     height: 1em;
     font: 1em/1em Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
-    width: 500px;
+    width: auto;
     background: #fff;
 }
 
 button {
     height: 2.2em;
-    width: 500px;
+    min-width: 350px;
+    width: auto;
     font: 1em/1.2em Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
     line-height: 1.2em;
     background-color: #06c;
