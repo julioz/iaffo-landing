@@ -23,20 +23,20 @@ $(document).ready(function() {
         } else if (name == '') {
             alert('Por favor entre com um nome.');
         } else if (validateEmail(email) && name != '') {
-            /*var Subscribers = Parse.Object.extend("Subscribers");
+            var Subscribers = Parse.Object.extend("Subscribers");
             var subscriber = new Subscribers();
      
             subscriber.set("name", name);
             subscriber.set("email", email);
      
             subscriber.save(null, {
-                success: function(subscriber) {*/
+                success: function(subscriber) {
                     displayTable('#thank-you');
-                /*},
+                },
                 error: function(subscriber, error) {
                     alert('Infelizmente um erro ocorreu. Tente mais tarde.');
                 }
-            });*/
+            });
         } else {
             alert('Por favor preencha todos os campos!');
         }
