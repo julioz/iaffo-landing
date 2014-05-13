@@ -14,31 +14,43 @@ $(document).ready(function() {
     
     displayTable('#formTable');
     
-    $('#btSubscribe').click(function() {
+    $('#btSubscribe').attr('disabled',true);
+    
+    $('#nameField').keyup(function(){
+        validateForm();
+    });
+    
+    $('#emailField').keyup(function(){
+        validateForm();
+    });
+    
+    function validateForm() {
+        var validName = ($('#nameField').val().trim() != '');
+        var validMail = validateEmail($('#emailField').val().trim());
+        if(validMail && validName){
+            $('#btSubscribe').attr('disabled', false);
+        } else {
+            $('#btSubscribe').attr('disabled',true);
+        }
+    };
+    
+    $('#btSubscribe').click(function() {    
         var name = $('#nameField').val().trim();
         var email = $('#emailField').val().trim();
     
-        if (!validateEmail(email)) {
-            alert('Por favor entre com um email valido.');
-        } else if (name == '') {
-            alert('Por favor entre com um nome.');
-        } else if (validateEmail(email) && name != '') {
-            var Subscribers = Parse.Object.extend("Subscribers");
-            var subscriber = new Subscribers();
+        var Subscribers = Parse.Object.extend("Subscribers");
+        var subscriber = new Subscribers();
+        
+        subscriber.set("name", name);
+        subscriber.set("email", email);
      
-            subscriber.set("name", name);
-            subscriber.set("email", email);
-     
-            subscriber.save(null, {
-                success: function(subscriber) {
-                    displayTable('#thank-you');
-                },
-                error: function(subscriber, error) {
-                    alert('Infelizmente um erro ocorreu. Tente mais tarde.');
-                }
-            });
-        } else {
-            alert('Por favor preencha todos os campos!');
-        }
+        subscriber.save(null, {
+            success: function(subscriber) {
+                displayTable('#thank-you');
+            },
+            error: function(subscriber, error) {
+                alert('Infelizmente um erro ocorreu. Tente mais tarde.');
+            }
+        });
     });
 });
