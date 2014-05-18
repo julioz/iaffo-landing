@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/form.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery.share.css">
     
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -37,6 +38,7 @@
     <script src="scripts/parseconf.js"></script>
     
     <script src="scripts/jquery-1.11.0.min.js"></script>
+    <script src="scripts/jquery.share.js"></script>
     <script src="scripts/index.js"></script>
 
     <title>Iaffo</title>
@@ -63,13 +65,15 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <!--<h3><a class="anchor" ></a>Aqui pode entrar um título qualquer</h3>-->
+        <center><h2><font color="#e88808">Já imaginou uma camisa tão criativa quanto você?</font></h2></center>
+        <div id="mainText">
+            <p>
+            Na Iaffo, acreditamos que todos devem ter a oportunidade de inovar. Por que não criar suas próprias roupas sem nenhum conhecimento técnico?
+            Com apenas alguns cliques, fabricar sua própria camisa e recebê-la em casa já é uma realidade. E isso é só o começo.</p>
+            <p>Somos a Iaffo, muito prazer. </p>
 
-<p>
-Na Iaffo, acreditamos que todos devem ter a oportunidade de criar. Por que não criar suas próprias roupas sem nenhum conhecimento técnico?
-Camisetas são apenas nosso ponto de partida. Com apenas alguns cliques, fabricar sua própria estampa e recebê-la em casa já é uma realidade. </p>
-<p><em>Já imaginou vestir sua criatividade?&nbsp;&nbsp;</em>Somos a Iaffo, muito prazer. </p>
-
-<center><h3>Curtiu? Vamos trocar uma ideia!</h3></center>
+            <center><h4>Curtiu? Quer ser o primeiro a saber das novidades? Vamos trocar uma ideia!</h4></center>
+        </div>
         <div class="form-wrapper">
             <table width="100%" id="formTable">
                 <tr>
@@ -84,22 +88,27 @@ Camisetas são apenas nosso ponto de partida. Com apenas alguns cliques, fabrica
                 </tr>
                 <tr>
                     <td>
-                        <button id="btSubscribe">Enviar</button
+                        <button id="btSubscribe">Quero saber mais</button
                     </td>
                 </tr>
             </table>
         </div>
 
-        <div class="form-wrapper" >
-            <table width="100%" id="thank-you">
+        <div class="form-wrapper" id="thank-you">
+            <table width="100%">
                 <tr>
                     <td>
-                        <h1>Muito obrigado!</h1>
+                        <h3><font color="#e88808">Muito obrigado!</font></h3>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <h3>Entraremos em contato em breve</h3>
+                        <h4>Entraremos em contato em breve.<br />Enquanto isso, por que você não compartilha essa novidade incrível com seus amigos?</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="shareDiv"></div>
                     </td>
                 </tr>
             </table>

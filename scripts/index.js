@@ -11,6 +11,11 @@ $(document).ready(function() {
         $(id).show();
     }
     
+    $('#shareDiv').share({
+        networks: ['facebook','twitter','googleplus','linkedin','tumblr','pinterest','email'],
+        urlToShare: 'http://www.iaffo.com',
+    });
+    
     displayTable('#formTable');
     
     $('#btSubscribe').attr('disabled',true);
@@ -53,6 +58,7 @@ $(document).ready(function() {
      
         subscriber.save(null, {
             success: function(subscriber) {
+            $('#mainText').hide();
                 displayTable('#thank-you');
             },
             error: function(subscriber, error) {
