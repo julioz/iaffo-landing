@@ -327,7 +327,7 @@ Full-Width Styles
 
 #project_logo {
     margin: 0 auto;
-    width: 100px;
+    width: 230px;
     border: none;
     display: block;
     margin-left: auto;
@@ -411,9 +411,11 @@ Full-Width Styles
 
 #footer_wrap {
   background: #429cd1;
+  margin-top: 25px;
 }
 
 #facebook_content {
+  margin-left: 120px;
 }
 
 
@@ -442,7 +444,7 @@ Small Device Styles
   
   #project_logo {
     margin: 0 auto;
-    width: 100px;
+    width: 230px;
   }
 
   h1 {
