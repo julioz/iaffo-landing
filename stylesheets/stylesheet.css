@@ -5,6 +5,11 @@ by Jason Costello, @jsncostello
 
 @import url(pygment_trac.css);
 
+@font-face {
+    font-family: 'Brandon'; /*a name to be used later*/
+    src: url('../raw/brandon_re.ttf'); /*URL to font*/
+}
+
 /*******************************************************************************
 MeyerWeb Reset
 *******************************************************************************/
@@ -50,8 +55,8 @@ Theme Styles
 
 body {
   box-sizing: border-box;
-  color:#373737;
-  background: #212121;
+  /*color:#373737;*/
+  background: #429cd1;
   font-size: 16px;
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -59,9 +64,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Brandon';
   margin: 10px 0;
   font-weight: 700;
-  color:#222222;
   font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
@@ -79,14 +84,18 @@ h2 {
 
 h3 {
   font-size: 24px;
+  font-family: 'Brandon';
 }
 
 h4 {
   font-size: 21px;
+  font-family: 'Brandon';
 }
 
 h5 {
   font-size: 18px;
+  font-weight: 300;
+  font-family: 'Brandon';
 }
 
 h6 {
@@ -94,8 +103,9 @@ h6 {
 }
 
 p {
+  font-family: 'Brandon';
   margin: 10px 0 15px 0;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 footer p {
@@ -299,7 +309,7 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: url('../images/header.jpg');
+  background: #FFFFFF;
   background-size: 100% auto;
   background-repeat:no-repeat;
   background-attachment:initial;
@@ -312,12 +322,12 @@ Full-Width Styles
 }
 
 #header_wrap .inner {
-  padding: 50px 10px 30px 10px;
+  padding: 10px 10px 10px 10px;
 }
 
 #project_logo {
     margin: 0 auto;
-    width: 600px;
+    width: 100px;
     border: none;
     display: block;
     margin-left: auto;
@@ -390,17 +400,20 @@ Full-Width Styles
 }
 
 #main_content_wrap {
-  background: #f2f2f2;
-  border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
+  background: #f8ae35;
+  /*border-top: 1px solid #111;
+  border-bottom: 1px solid #111;*/
 }
 
 #main_content {
-  padding-top: 25px;
+  padding-top: 15px;
 }
 
 #footer_wrap {
-  background: #212121;
+  background: #429cd1;
+}
+
+#facebook_content {
 }
 
 
@@ -429,7 +442,7 @@ Small Device Styles
   
   #project_logo {
     margin: 0 auto;
-    width: 420px;
+    width: 100px;
   }
 
   h1 {
