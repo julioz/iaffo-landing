@@ -327,7 +327,7 @@ Full-Width Styles
 
 #project_logo {
     margin: 0 auto;
-    width: 230px;
+    width: 200px;
     border: none;
     display: block;
     margin-left: auto;
@@ -444,7 +444,7 @@ Small Device Styles
   
   #project_logo {
     margin: 0 auto;
-    width: 230px;
+    width: 200px;
   }
 
   h1 {
