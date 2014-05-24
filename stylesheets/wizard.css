@@ -26,27 +26,27 @@
     min-width:175px;
     position:relative;
     list-style:none;
-    padding-top:120px;
     display:inline-block;
     overflow:visible;
     font-family:'Brandon';
     font-size:20px;
     margin-right:90px;
+    padding-top:140px;
 }
 
 #how .steps li.how-photo {
     background:url(../images/how-photo.png) no-repeat top center;
-    background-size:auto 110px;
+    background-size:auto 135px;
 }
 
 #how .steps li.how-send {
     background:url(../images/how-send.png) no-repeat top center;
-    background-size:auto 110px;
+    background-size:auto 135px;
 }
 
 #how .steps li.how-home {
     background:url(../images/how-home.png) no-repeat top center;
-    background-size:auto 110px;
+    background-size:auto 135px;
 }
 
 #how .steps li:last-child {
