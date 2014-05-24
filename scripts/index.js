@@ -69,8 +69,7 @@ $(document).ready(function() {
                 alert('Infelizmente um erro ocorreu. Tente mais tarde.');
             }
         });
-    });
-    
+    });    
     
     var isMobile = {
         Android: function() {

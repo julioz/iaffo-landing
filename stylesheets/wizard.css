@@ -1,0 +1,67 @@
+#how {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#how h3 {
+    margin-bottom: -3px;
+    font-size: 26px;
+}
+
+#how h5 {
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+#how .steps {
+    position:relative;
+    font-weight:400;
+    margin-top:25px;
+    padding-left:0
+}
+
+#how .steps li {
+    line-height:25px;
+    min-width:175px;
+    position:relative;
+    list-style:none;
+    padding-top:120px;
+    display:inline-block;
+    overflow:visible;
+    font-family:'Brandon';
+    font-size:20px;
+    margin-right:90px;
+}
+
+#how .steps li.how-photo {
+    background:url(../images/how-photo.png) no-repeat top center;
+    background-size:auto 110px;
+}
+
+#how .steps li.how-send {
+    background:url(../images/how-send.png) no-repeat top center;
+    background-size:auto 110px;
+}
+
+#how .steps li.how-home {
+    background:url(../images/how-home.png) no-repeat top center;
+    background-size:auto 110px;
+}
+
+#how .steps li:last-child {
+    margin:0;
+}
+
+@media screen and (max-width: 765px) {
+    #how .steps li {
+        display:block;
+        margin: 0;
+        margin-top: 20px;
+    }
+    
+    #how .steps li:last-child {
+        margin:0;
+        margin-top: 20px;
+    }
+}
