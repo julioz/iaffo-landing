@@ -51,6 +51,7 @@ $(document).ready(function() {
         
         subscriber.set("name", name);
         subscriber.set("email", email);
+        subscriber.set("emailSent", false);
         
         if (isMobile.Android()) {
             subscriber.set("device", "android");
