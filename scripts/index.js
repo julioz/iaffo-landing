@@ -43,6 +43,9 @@ $(document).ready(function() {
     };
     
     $('#btSubscribe').click(function() {    
+        $('#mainText').hide();
+        displayTable('#thank-you');
+
         var name = $('#nameField').val().trim();
         var email = $('#emailField').val().trim();
     
@@ -63,11 +66,12 @@ $(document).ready(function() {
      
         subscriber.save(null, {
             success: function(subscriber) {
-            $('#mainText').hide();
-                displayTable('#thank-you');
+
             },
             error: function(subscriber, error) {
-                alert('Infelizmente um erro ocorreu. Tente mais tarde.');
+                $('#mainText').show();
+                displayTable('#formTable');
+                alert('Infelizmente um erro ocorreu. Tente novamente mais tarde.');
             }
         });
     });    
