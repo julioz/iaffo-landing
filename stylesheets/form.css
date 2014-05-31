@@ -32,6 +32,36 @@ input {
     background: #fff;
 }
 
+#progressbar {
+    height: 1em;
+    width: 350px;
+    text-align: center;
+    display: inline-block;
+}
+
+#progressbar-label {
+    width: 100%;
+    float: left;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+#progressbar .ui-progressbar-value {
+    background-color: #cb0143;
+}
+
+#fileselect {
+    display: none;
+}
+
+#uploadbutton {
+    width: 10%;
+    min-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 button {
     height: 2.2em;
     min-width: 350px;

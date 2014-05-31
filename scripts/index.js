@@ -4,9 +4,14 @@ $(document).ready(function() {
         return re.test(email);
     }
     
+    function isFileSelected() {
+        return document.getElementById("fileselect").value != "";
+    }
+    
     function displayTable(id) {
         $('#formTable').hide();
         $('#thank-you').hide();
+        $('#uploading').hide();
         
         $(id).show();
     }
@@ -42,10 +47,36 @@ $(document).ready(function() {
         }
     };
     
-    $('#btSubscribe').click(function() {    
+    function saveSubscriberWithPicture(subscriber, parseFile) {
+        parseFile.save().then(function() {
+                // The file has been saved to Parse.
+                subscriber.set("picture", parseFile);
+                
+                onDataGatheredComplete();
+                subscriber.save();
+            }, function(error) {
+                // The file either could not be read, or could not be saved to Parse.
+                $('#mainText').show();
+                displayTable('#formTable');
+                alert('Infelizmente um erro ocorreu ao enviar sua imagem. Tente novamente mais tarde.');
+        });
+    }
+    
+    $("#progressbar").progressbar({
+        value: false // indeterminate
+    });
+    
+    
+    $('#uploadbutton').click(function() {
+        $('#fileselect').click();
+    });
+    
+    function onDataGatheredComplete() {
         $('#mainText').hide();
         displayTable('#thank-you');
-
+    }
+    
+    $('#btSubscribe').click(function() {    
         var name = $('#nameField').val().trim();
         var email = $('#emailField').val().trim();
     
@@ -63,18 +94,37 @@ $(document).ready(function() {
         } else {
             subscriber.set("device", "desktop");
         }
-     
-        subscriber.save(null, {
-            success: function(subscriber) {
+        
+        if (isFileSelected()) {
+            var name = file.name;
 
-            },
-            error: function(subscriber, error) {
-                $('#mainText').show();
-                displayTable('#formTable');
-                alert('Infelizmente um erro ocorreu. Tente novamente mais tarde.');
-            }
-        });
-    });    
+            var parseFile = new Parse.File(name, file);
+            displayTable('#uploading');
+            saveSubscriberWithPicture(subscriber, parseFile);
+        } else {
+            onDataGatheredComplete();
+            subscriber.save(null, {
+                success: function(subscriber) {
+    
+                },
+                error: function(subscriber, error) {
+                    $('#mainText').show();
+                    displayTable('#formTable');
+                    alert('Infelizmente um erro ocorreu. Tente novamente mais tarde.');
+                }
+            });
+        }
+    });
+    
+    var file;
+
+    // Set an event listener on the Choose File field.
+    $('#fileselect').bind("change", function(e) {
+        var files = e.target.files || e.dataTransfer.files;
+        // Our file var now holds the selected file
+        file = files[0];
+        $('#uploadbutton').text(file.name);
+    });
     
     var isMobile = {
         Android: function() {

@@ -15,6 +15,7 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:description" content="Vista sua criatividade! Aqui na Iaffo você consegue eternizar suas fotos em camisas da mais alta qualidade e tudo com um serviço nota dez!">
     
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/wizard.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/form.css">
@@ -39,6 +40,7 @@
     
     <script src="scripts/jquery-1.11.0.min.js"></script>
     <script src="scripts/jquery.share.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="scripts/index.js"></script>
 
     <title>Iaffo</title>
@@ -60,7 +62,6 @@
             </section> -->
         </header>
     </div>
-
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
@@ -84,8 +85,6 @@
             </ul>
         </div>
       </section>
-      
-      
     </div>
 
     <!-- FOOTER  -->
@@ -106,10 +105,20 @@
                 </tr>
                 <tr>
                     <td>
+                        <input type="file" accept="image/*" name="fileselect" id="fileselect"></input>
+                        <button id="uploadbutton">Enviar foto</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <button id="btSubscribe">QUERO SABER MAIS</button
                     </td>
                 </tr>
             </table>
+        </div>
+        
+        <div class="form-wrapper" id="uploading">
+            <div id="progressbar"><div id="progressbar-label">enviando foto...</div></div>
         </div>
 
         <div class="form-wrapper" id="thank-you">
