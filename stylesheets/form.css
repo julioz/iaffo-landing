@@ -50,6 +50,10 @@ input {
     background-color: #cb0143;
 }
 
+#btSubscribe {
+    margin-top: 45px;
+}
+
 #fileselect {
     display: none;
 }
