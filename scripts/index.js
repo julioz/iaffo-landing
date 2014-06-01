@@ -124,6 +124,7 @@ $(document).ready(function() {
         // Our file var now holds the selected file
         file = files[0];
         $('#uploadbutton').text(file.name);
+        $('#btSubscribe').text("CRIAR MINHA CAMISA");
     });
     
     var isMobile = {
