@@ -54,6 +54,7 @@ $(document).ready(function() {
                 
                 onDataGatheredComplete();
                 subscriber.save();
+                ga('send', 'event', 'subscription', 'complete', 'subscription-pictureattached');
             }, function(error) {
                 // The file either could not be read, or could not be saved to Parse.
                 $('#mainText').show();
@@ -69,6 +70,7 @@ $(document).ready(function() {
     
     $('#uploadbutton').click(function() {
         $('#fileselect').click();
+        ga('send', 'event', 'button', 'click', 'upload-click');
     });
     
     function onDataGatheredComplete() {
@@ -105,7 +107,7 @@ $(document).ready(function() {
             onDataGatheredComplete();
             subscriber.save(null, {
                 success: function(subscriber) {
-    
+                    ga('send', 'event', 'subscription', 'complete', 'subscription-nopicture');
                 },
                 error: function(subscriber, error) {
                     $('#mainText').show();
