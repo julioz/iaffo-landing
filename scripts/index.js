@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
     
     $('#btSubscribe').click(function() {    
-        var name = $('#nameField').val().trim();
+        //var name = $('#nameField').val().trim();
         var email = $('#emailField').val().trim();
     
         if ($('#btSubscribe').hasClass('disabled')) {
@@ -47,7 +47,7 @@ $(document).ready(function() {
         var Subscribers = Parse.Object.extend("Subscribers");
         var subscriber = new Subscribers();
         
-        subscriber.set("name", name);
+        //subscriber.set("name", name);
         subscriber.set("email", email);
         subscriber.set("emailSent", false);
         

@@ -7,16 +7,16 @@ $(document).ready(function() {
     $('#btSubscribe').toggleClass('disabled');
     $('#incomplete-form-warning').fadeTo(100,0);
 
-    $('#nameField').keyup(function(){
+    /*$('#nameField').keyup(function(){
         validateForm();
-    });
+    });*/
 
     $('#emailField').keyup(function(){
         validateForm();
     });
 
     function validateForm() {
-        var validName = ($('#nameField').val().trim() != '');
+        var validName = true;//($('#nameField').val().trim() != '');
         var validMail = validateEmail($('#emailField').val().trim());
         if(validMail && validName){
             $('#btSubscribe').removeClass('disabled');
