@@ -50,8 +50,13 @@ input {
     background-color: #cb0143;
 }
 
-#btSubscribe {
+#formTable-row-subscribe {
     margin-top: 45px;
+}
+
+#incomplete-form-warning {
+    font-size: 17px;
+    color: #DDDDDD;
 }
 
 #fileselect {
@@ -88,24 +93,7 @@ button {
     text-shadow: #039 0 1px 1px;
 }
 
-button:hover {
-    border: #039 solid 1px;
-    text-shadow: #039 0 1px 1px;
-    background-color: #ff0054;
-    background-image: none;
-}
-button:active {
-    border: #039 solid 1px;
-    text-shadow: #039 0 1px 1px;
-    background-image: linear-gradient(top,#cb0143 0,#ff0054 66%);
-    background-image: -o-linear-gradient(top,#cb0143 0,#ff0054 66%);
-    background-image: -moz-linear-gradient(top,#cb0143 0,#ff0054 66%);
-    background-image: -webkit-linear-gradient(top,#cb0143 0,#ff0054 66%);
-    background-image: -ms-linear-gradient(top,#cb0143 0,#ff0054 66%);
-    background-image: -webkit-gradient(linear,right top,right bottom,color-stop(0,#cb0143),color-stop(0.66,#ff0054));
-}
-
-button:disabled {
+.disabled {
     border: #e64e96 solid 1px;
     text-shadow: #030 0 1px 1px;
     background-image: linear-gradient(top,#e64e96 0,#f36691 66%);

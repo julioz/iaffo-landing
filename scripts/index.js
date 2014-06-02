@@ -23,7 +23,8 @@ $(document).ready(function() {
     
     displayTable('#formTable');
     
-    $('#btSubscribe').attr('disabled',true);
+    $('#btSubscribe').toggleClass('disabled');
+    $('#incomplete-form-warning').hide();
     
     $('#btSubscribe').on('click', function() {
         ga('send', 'event', 'button', 'click', 'subscribe-click');
@@ -41,9 +42,9 @@ $(document).ready(function() {
         var validName = ($('#nameField').val().trim() != '');
         var validMail = validateEmail($('#emailField').val().trim());
         if(validMail && validName){
-            $('#btSubscribe').attr('disabled', false);
+            $('#btSubscribe').removeClass('disabled');
         } else {
-            $('#btSubscribe').attr('disabled',true);
+            $('#btSubscribe').addClass('disabled');
         }
     };
     
@@ -81,6 +82,12 @@ $(document).ready(function() {
     $('#btSubscribe').click(function() {    
         var name = $('#nameField').val().trim();
         var email = $('#emailField').val().trim();
+    
+        if ($('#btSubscribe').hasClass('disabled')) {
+            $('#incomplete-form-warning').fadeIn();
+            ga('send', 'event', 'button', 'click', 'btn-subscribe-disabled');
+            return;
+        }
     
         var Subscribers = Parse.Object.extend("Subscribers");
         var subscriber = new Subscribers();
