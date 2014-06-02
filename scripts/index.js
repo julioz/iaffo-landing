@@ -1,13 +1,4 @@
 $(document).ready(function() {
-    function validateEmail(email) { 
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
-    
-    function isFileSelected() {
-        return document.getElementById("fileselect").value != "";
-    }
-    
     function displayTable(id) {
         $('#formTable').hide();
         $('#thank-you').hide();
@@ -16,37 +7,11 @@ $(document).ready(function() {
         $(id).show();
     }
     
-    $('#shareDiv').share({
-        networks: ['facebook','twitter','googleplus','linkedin','tumblr','pinterest','email'],
-        urlToShare: 'http://www.iaffo.com',
-    });
-    
     displayTable('#formTable');
-    
-    $('#btSubscribe').toggleClass('disabled');
-    $('#incomplete-form-warning').hide();
     
     $('#btSubscribe').on('click', function() {
         ga('send', 'event', 'button', 'click', 'subscribe-click');
     });
-    
-    $('#nameField').keyup(function(){
-        validateForm();
-    });
-    
-    $('#emailField').keyup(function(){
-        validateForm();
-    });
-    
-    function validateForm() {
-        var validName = ($('#nameField').val().trim() != '');
-        var validMail = validateEmail($('#emailField').val().trim());
-        if(validMail && validName){
-            $('#btSubscribe').removeClass('disabled');
-        } else {
-            $('#btSubscribe').addClass('disabled');
-        }
-    };
     
     function saveSubscriberWithPicture(subscriber, parseFile) {
         parseFile.save().then(function() {
@@ -64,16 +29,6 @@ $(document).ready(function() {
         });
     }
     
-    $("#progressbar").progressbar({
-        value: false // indeterminate
-    });
-    
-    
-    $('#uploadbutton').click(function() {
-        $('#fileselect').click();
-        ga('send', 'event', 'button', 'click', 'upload-click');
-    });
-    
     function onDataGatheredComplete() {
         $('#mainText').hide();
         displayTable('#thank-you');
@@ -84,7 +39,7 @@ $(document).ready(function() {
         var email = $('#emailField').val().trim();
     
         if ($('#btSubscribe').hasClass('disabled')) {
-            $('#incomplete-form-warning').fadeIn();
+            $('#incomplete-form-warning').fadeTo(1000,1)
             ga('send', 'event', 'button', 'click', 'btn-subscribe-disabled');
             return;
         }
@@ -105,9 +60,9 @@ $(document).ready(function() {
         }
         
         if (isFileSelected()) {
-            var name = file.name;
+            var name = userPicture.name;
 
-            var parseFile = new Parse.File(name, file);
+            var parseFile = new Parse.File(name, userPicture);
             displayTable('#uploading');
             saveSubscriberWithPicture(subscriber, parseFile);
         } else {
@@ -124,41 +79,4 @@ $(document).ready(function() {
             });
         }
     });
-    
-    var file;
-
-    // Set an event listener on the Choose File field.
-    $('#fileselect').bind("change", function(e) {
-        var files = e.target.files || e.dataTransfer.files;
-        // Our file var now holds the selected file
-        file = files[0];
-        $('#uploadbutton').text(file.name);
-        $('#btSubscribe').text("CRIAR MINHA CAMISA");
-    });
-    
-    var isMobile = {
-        Android: function() {
-            return navigator.userAgent.match(/Android/i);
-        },
-        BlackBerry: function() {
-            return navigator.userAgent.match(/BlackBerry/i);
-        },
-        iOS: function() {
-            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        },
-        Opera: function() {
-            return navigator.userAgent.match(/Opera Mini/i);
-        },
-        Windows: function() {
-            return navigator.userAgent.match(/IEMobile/i);
-        },
-        any: function() {
-            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-        }
-
-    };
-    
-    function isMobileDevice() {
-        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    };
 });
