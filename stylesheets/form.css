@@ -50,12 +50,9 @@ input {
     background-color: #cb0143;
 }
 
-#formTable-row-subscribe {
-    margin-top: 45px;
-}
-
 #incomplete-form-warning {
     font-size: 17px;
+    margin-top: 30px;
     color: #DDDDDD;
 }
 
