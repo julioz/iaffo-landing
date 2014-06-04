@@ -34,6 +34,10 @@ $(document).ready(function() {
         displayTable('#thank-you');
     }
     
+    $('#fanpage_link').find('a').click(function() {
+        ga('send', 'event', 'link', 'click', 'fanpage-link');
+    });
+    
     $('#btSubscribe').click(function() {    
         //var name = $('#nameField').val().trim();
         var email = $('#emailField').val().trim();
