@@ -30,7 +30,6 @@
     overflow:visible;
     font-family:'Brandon';
     font-size:20px;
-    margin-right:90px;
     padding-top:140px;
 }
 
@@ -49,11 +48,17 @@
     background-size:auto 135px;
 }
 
+#how .steps li.how-arrow {
+    background:url(../images/how-arrow.png) no-repeat top center;
+    background-size:auto 80px;
+    min-width: 80px;
+}
+
 #how .steps li:last-child {
     margin:0;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 800px) {
     #how .steps li {
         display:block;
         margin: 0;
@@ -63,5 +68,9 @@
     #how .steps li:last-child {
         margin:0;
         margin-top: 20px;
+    }
+    
+    #how .steps li.how-arrow {
+        display: none;
     }
 }

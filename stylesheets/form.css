@@ -62,7 +62,7 @@ input {
 
 #uploadbutton {
     width: 10%;
-    min-width: 100px;
+    min-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
